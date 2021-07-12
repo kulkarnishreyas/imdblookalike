@@ -1,0 +1,43 @@
+{% include 'movies/top.html' %}
+    {% block content %}
+    <div >
+        <div class="form-group" style="padding-top: 5rem;">
+            <form action="/search_movies" method="POST">
+                {% csrf_token %}
+                <div class="form-group" style="padding-inline: 3rem;">
+                    <input type="text" class="form-control" placeholder="Search movies" name="movie">
+                </div>
+                <div style="text-align:center"><button class="btn btn-info">Search</button></div>
+                
+            </form>
+        </div>
+    </div>
+        <div  style="display: flex; align-items: stretch; flex-wrap: wrap;">
+            
+                {% for movie in movies %}
+                    <div class="card" style="margin: 1rem; width: 250px;">
+                        <div class="card-title" style="text-align: center;">
+                            <b>{{movie.name}}</b>
+                        </div>   
+            
+                        <div class="card-body">
+                            Director: <a href="#">{{movie.director}}</a>
+                            99Popularity rating: {{movie.ninetyninepop}}
+                            <p>
+                                IMDB Rating: {{movie.imdb_rate}}
+                            </p>
+                            <div class="card-subtitle mb-2 text-muted">
+                                Genre: 
+                                {% for genre in movie.genre.all %}
+                                    <a href="">{{genre}}</a>&nbsp;
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endblock %}

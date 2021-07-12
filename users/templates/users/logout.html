@@ -1,0 +1,13 @@
+{% extends 'movies/top.html' %}
+{% block content %}
+<div class="container" style="padding-top: 5rem;">
+<div class='pt-3'>
+    <small class="text-muted">
+        You've been logged out. Click here to <a href="{% url 'login' %}">Login</a>
+    </small>
+    <small>
+        To go to administrator page, goto <a href="/admin/">Admin page</a>
+    </small>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'movies/top.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section col-md-12" style="margin-top: 5rem;">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">
+                    Create a new Movie Entry
+                </legend>
+                <!-- {{ form }} -->
+                <!-- Just form is barebones printing of form -->
+                {{ form | crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-success" type="submit">Create now</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
