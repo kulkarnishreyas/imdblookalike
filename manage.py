@@ -5,7 +5,7 @@ import sys
 
 # This is commit 1
 # Commit 2
-
+#Commit 3
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'imdb_lookalike.settings')
